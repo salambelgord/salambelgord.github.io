@@ -1,6 +1,5 @@
 const { Telegraf } = require("telegraf");
 const { telegram } = require("./config/options");
-
 const menuMiddleware = require("./menus");
 
 const bot = new Telegraf(telegram.token);
@@ -10,7 +9,8 @@ bot.on("callback_query:data", async (ctx, next) => {
     "another callbackQuery happened",
     ctx.callbackQuery.data.length,
     ctx.callbackQuery.data
-  );
+    );
+   
   return next();
 });
 
@@ -26,6 +26,7 @@ async function start() {
     await bot.launch();
   } catch (error) {
     console.log(error);
+   
   }
 }
 

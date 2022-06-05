@@ -251,3 +251,24 @@ async function start() {
 }
 
 start();
+/**
+ * bot.command('getdb', (ctx) => {
+    var fs = require('fs'),
+        path = require('path'),
+        filePath = path.join('storage', 'db.db');
+    fs.readFile(filePath, { encoding: 'utf-8' }, function (err, data) {
+        if (!err) {
+            console.log('received data: ' + data);
+            ctx.telegram.sendDocument(ctx.from.id, data)
+        } else {
+            console.log(err)
+        }
+    })
+})
+
+ctx.telegram.sendDocument(ctx.from.id, {
+   source: data,
+   filename: 'somefilename.txt'
+}).catch(function(error){ console.log(error); })
+
+*/
